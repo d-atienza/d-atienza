@@ -1,6 +1,6 @@
 This repo is to store notes from my SQL exercises so that they are easily accessible to me wherever!
 
-DDL Student Records 
+**DDL Student Records** 
 Syntax:
 CREATE TABLE student (
 	matric_no CHAR(8) PRIMARY KEY,
@@ -50,10 +50,18 @@ VALUES
 ('40001012', 'HUF07101', 40),
 ('40001012', 'HUF08102', NULL);
 
-SELECT registration.module_code, student.first_name, student.last_name, registration.result
+
+SELECT registration.module_code, student.first_name, student.last_name, registration.result,
+CASE
+ 	WHEN registration.result <= 39 THEN 'F'
+  WHEN registration.result >= 40 AND result <= 69 THEN 'P' 
+  WHEN registration.result >= 70 THEN 'M'
+ END AS grade
 FROM registration
 JOIN student
 	ON registration.matric_no = student.matric_no
  WHERE registration.module_code = 'SLY07102';
+// https://sqlzoo.net/wiki/DDL_Student_Records
 
+----
 
