@@ -64,4 +64,10 @@ JOIN student
 // https://sqlzoo.net/wiki/DDL_Student_Records
 
 ----
+**Using 'IN' Clause**
+Q: Show the name and population for France, Germany, Italy
+Syntax:
+SELECT name, population
+FROM world
+WHERE name IN ('France', 'Germany', 'Italy');
 
