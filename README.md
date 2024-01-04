@@ -1,0 +1,59 @@
+This repo is to store notes from my SQL exercises so that they are easily accessible to me wherever!
+
+DDL Student Records 
+Syntax:
+CREATE TABLE student (
+	matric_no CHAR(8) PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  date_of_birth DATE
+);
+
+INSERT INTO student (matric_no, first_name, last_name, date_of_birth)
+VALUES
+('40001010', 'Daniel', 'Radcliffe', '1989-07-23'), 
+('40001011', 'Emma', 'Watson', '1990-04-15'),
+('40001012', 'Rupert', 'Grint', '1988-10-24');
+
+CREATE TABLE module (
+	module_code CHAR(8) PRIMARY KEY,
+  module_title VARCHAR(50),
+  level INTEGER,
+  credits INTEGER
+);
+
+INSERT INTO module (module_code, module_title, level, credits)
+VALUES
+('HUF07101', 'Herbology', 07, 20),
+('SLY07102', 'Defense Against the Dark Arts', 07, 20),
+('HUF08102', 'History of Magic', 08, 20);
+
+
+CREATE TABLE registration (
+  matric_no CHAR(8),
+	module_code CHAR(8),
+  result DECIMAL (4,1),
+  PRIMARY KEY (matric_no, module_code)
+);
+
+INSERT INTO registration (matric_no, module_code, result)
+VALUES
+('40001010', 'SLY07102', 90),
+('40001010', 'HUF07101', 40),
+('40001010', 'HUF08102', 0.0),
+
+('40001011', 'SLY07102', 99),
+('40001011', 'HUF07101', 40),
+('40001011', 'HUF08102', 0.0),
+
+('40001012', 'SLY07102', 20),
+('40001012', 'HUF07101', 40),
+('40001012', 'HUF08102', NULL);
+
+SELECT registration.module_code, student.first_name, student.last_name, registration.result
+FROM registration
+JOIN student
+	ON registration.matric_no = student.matric_no
+ WHERE registration.module_code = 'SLY07102';
+
+
