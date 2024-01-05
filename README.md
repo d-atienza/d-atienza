@@ -79,3 +79,11 @@ SELECT name, population, area
 FROM world
 WHERE area > 3000000 XOR population > 250000000;
 
+----
+**Using Round to the nearest 1000 instead of decimal place**
+Q: Show the name and per-capita GDP for those countries with a GDP of at least one trillion (1000000000000; that is 12 zeros). Round this value to the nearest 1000.
+Syntax:
+SELECT name, ROUND(GDP/population, -3)
+FROM world
+WHERE GDP > 1000000000000
+
