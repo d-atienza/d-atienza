@@ -87,3 +87,11 @@ SELECT name, ROUND(GDP/population, -3)
 FROM world
 WHERE GDP > 1000000000000
 
+----
+**How to use length in a query**
+Q: Greece has capital Athens. Each of the strings 'Greece', and 'Athens' has 6 characters. Show the name and capital where the name and the capital have the same number of characters.
+Syntax:
+SELECT name, capital
+  FROM world
+ WHERE LENGTH(name) = LENGTH(capital);
+
