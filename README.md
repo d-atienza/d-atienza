@@ -143,6 +143,32 @@ GROUP BY course_id;
 
 SELECT * from course_size;
 
+----
+**Using subquery to query information from your original query** 
+Q: Create a subquery / subselect of the average of the top scores of each team
+Syntax:
+CREATE TABLE moosesport (
+	player VARCHAR(100),
+	team VARCHAR(100),
+	score INTEGER
+);
+
+INSERT INTO moosesport (player, team, score)
+VALUES
+('MARTHA', 'Ice Weasels', 17),
+('BILLY BOY', 'Frostbiters', 23),
+('JOJO', 'Ice Weasels', 11),
+('MOOSE', 'Frostbiters', 41),
+('MOOSE', 'Traffic Stoppers', 36),
+('MOOSARINA', 'Traffic Stoppers', 12);
+
+SELECT AVG(bigscore) AS maxes
+FROM (SELECT MAX(score) AS bigscore
+FROM moosesport
+GROUP BY team) AS subquery;
+
+// http://www.postgresql.org/docs/9.4/static/functions-subquery.html
+
 
 
 
