@@ -108,7 +108,7 @@ WHERE name <> capital AND LEFT(name,1) = LEFT(capital,1);
 
 ----
 **Using NOT LIKE to filter out two worded countries (ie. United Kingdom)**
-Q:Equatorial Guinea and Dominican Republic have all of the vowels (a e i o u) in the name. They don't count because they have more than one word in the name. Find the country that has all the vowels and no spaces in its name.
+Q: Equatorial Guinea and Dominican Republic have all of the vowels (a e i o u) in the name. They don't count because they have more than one word in the name. Find the country that has all the vowels and no spaces in its name.
 Syntax: 
 SELECT name
    FROM world
@@ -118,3 +118,31 @@ AND name LIKE '%i%'
 AND name LIKE '%o%'
 AND name LIKE '%u%'
 AND name NOT LIKE '% %'; 
+
+----
+** Using 'VIEW' to create a mini table that you can reference if you are going to use that specific information constantly instead of using SELECT statement with all the clauses again and again**
+Q: Create a 'view' of the course id and the number of students who have signed up for it
+Syntax:
+CREATE TABLE enrollment (
+	student_id INTEGER PRIMARY KEY,
+  course_id CHAR(5) NOT NULL
+);
+
+INSERT INTO enrollment (student_id, course_id)
+VALUES (413011, 'CS101'), 
+(612123, 'BI102'), 
+(102542, 'CS101'), 
+(231705, 'CS101'), 
+(341024, 'MT103');
+
+
+CREATE VIEW course_size AS
+SELECT course_id, count(*) AS num
+FROM enrollment
+GROUP BY course_id;
+
+SELECT * from course_size;
+
+
+
+
