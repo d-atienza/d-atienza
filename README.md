@@ -54,8 +54,8 @@ VALUES
 SELECT registration.module_code, student.first_name, student.last_name, registration.result,
 CASE
  	WHEN registration.result <= 39 THEN 'F'
-  WHEN registration.result >= 40 AND result <= 69 THEN 'P' 
-  WHEN registration.result >= 70 THEN 'M'
+ 	WHEN registration.result >= 40 AND result <= 69 THEN 'P' 
+ 	WHEN registration.result >= 70 THEN 'M'
  END AS grade
 FROM registration
 JOIN student
