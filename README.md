@@ -177,4 +177,15 @@ SELECT *
 FROM cd.facilities
 WHERE facid in (1, 5);
 
+----
+** Using DISTINCT removes doubles from a listing **
+Q: How can you produce an ordered list of the first 10 surnames in the members table? The list must not contain duplicates.
+Syntax:
+SELECT distinct surname
+FROM cd.members
+ORDER BY surname ASC
+LIMIT 10;
+
+----
+
 
