@@ -120,7 +120,7 @@ AND name LIKE '%u%'
 AND name NOT LIKE '% %'; 
 
 ----
-** Using 'VIEW' to create a mini table that you can reference if you are going to use that specific information constantly instead of using SELECT statement with all the clauses again and again**
+**Using 'VIEW' to create a mini table that you can reference if you are going to use that specific information constantly instead of using SELECT statement with all the clauses again and again**
 Q: Create a 'view' of the course id and the number of students who have signed up for it
 Syntax:
 CREATE TABLE enrollment (
