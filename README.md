@@ -154,19 +154,6 @@ CREATE TABLE moosesport (
 );
 
 ----
-**Using 2 JOINS to complete this!**
-Q: Obtain the cast list for 'Casablanca'. There are 3 tables: actor, movie, casting
-Syntax:
-select actor.name
-from movie
-
-inner join casting
-on movie.id = casting.movieid
-
-inner join actor
-on actorid = actor.id
-
-where movie.title = 'Casablanca'
 INSERT INTO moosesport (player, team, score)
 VALUES
 ('MARTHA', 'Ice Weasels', 17),
@@ -228,16 +215,16 @@ SELECT distinct player
     WHERE (team1='GER' OR team2='GER') AND teamid!='GER'
 
 ----
-**Using 2 INNER JOINS to get casting list**
-Q: List the films in which 'Harrison Ford' has appeared. There are 3 tables: actor, movie, casting
+**Using 2 JOINS to complete this!**
+Q: Obtain the cast list for 'Casablanca'. There are 3 tables: actor, movie, casting
 Syntax:
-select movie.title
-from actor
+select actor.name
+from movie
 
 inner join casting
-actorid = actor.id
-
-inner join movie
 on movie.id = casting.movieid
 
-where actor.name = 'Harrison Ford'
+inner join actor
+on actorid = actor.id
+
+where movie.title = 'Casablanca'
