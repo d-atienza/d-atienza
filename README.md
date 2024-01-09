@@ -153,6 +153,20 @@ CREATE TABLE moosesport (
 	score INTEGER
 );
 
+----
+**Using 2 JOINS to complete this!**
+Q: Obtain the cast list for 'Casablanca'. There are 3 tables: actor, movie, casting
+Syntax:
+select actor.name
+from movie
+
+inner join casting
+on movie.id = casting.movieid
+
+inner join actor
+on actorid = actor.id
+
+where movie.title = 'Casablanca'
 INSERT INTO moosesport (player, team, score)
 VALUES
 ('MARTHA', 'Ice Weasels', 17),
