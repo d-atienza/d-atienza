@@ -232,12 +232,12 @@ SELECT distinct player
 Q: List the films in which 'Harrison Ford' has appeared. There are 3 tables: actor, movie, casting
 Syntax:
 select movie.title
-FROM movie // the attribute you're asking for will have to come FROM that specific table (in this case 'movie')
+from actor
 
 inner join casting
-on movie.id = casting.movieid
+actorid = actor.id
 
-inner join actor
-on actorid = actor.id
+inner join movie
+on movie.id = casting.movieid
 
 where actor.name = 'Harrison Ford'
