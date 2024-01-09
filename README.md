@@ -228,5 +228,16 @@ SELECT distinct player
     WHERE (team1='GER' OR team2='GER') AND teamid!='GER'
 
 ----
+**Using 2 INNER JOINS to get casting list**
+Q: List the films in which 'Harrison Ford' has appeared. There are 3 tables: actor, movie, casting
+Syntax:
+select movie.title
+FROM movie // the attribute you're asking for will have to come FROM that specific table (in this case 'movie')
 
-----
+inner join casting
+on movie.id = casting.movieid
+
+inner join actor
+on actorid = actor.id
+
+where actor.name = 'Harrison Ford'
