@@ -178,7 +178,7 @@ FROM cd.facilities
 WHERE facid in (1, 5);
 
 ----
-** Using DISTINCT removes doubles from a listing **
+**Using DISTINCT removes doubles from a listing**
 Q: How can you produce an ordered list of the first 10 surnames in the members table? The list must not contain duplicates.
 Syntax:
 SELECT distinct surname
@@ -187,5 +187,15 @@ ORDER BY surname ASC
 LIMIT 10;
 
 ----
+**Using a NESTED SELECT and the clause IN to sort information**
+Q: List the name and continent of countries in the continents containing either Argentina or Australia. Order by name of the country.
+Syntax:
+select name, continent
+from world 
+where continent in (select continent from world where name = 'Argentina' or name = 'Australia')
+order by name asc;
+
+----
+
 
 
