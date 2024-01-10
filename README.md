@@ -228,10 +228,32 @@ inner join actor
 on actorid = actor.id
 
 where movie.title = 'Casablanca'
+
 ----
+**Using NESTED SELECT/INNER JOIN QUERIES**
+Q: List the film title and the leading actor for all of the films 'Julie Andrews' played in.
+Syntac:
+SELECT distinct title, actor.name
+FROM movie
+INNER JOIN casting
+ON movie.id = movieid
 
-****
+INNER JOIN actor
+ON actor.id = actorid
 
+WHERE ord = 1 AND title IN (SELECT distinct title
+FROM movie
+INNER JOIN casting
+ON movie.id = movieid
+
+INNER JOIN actor
+ON actor.id = actorid
+WHERE name='Julie Andrews')
+
+----
+**Using HAVING with COUNT**
+Q: Obtain a list, in alphabetical order, of actors who've had at least 15 starring roles.
+Syntax: 
 select name
 from movie
 inner join casting
