@@ -228,3 +228,18 @@ inner join actor
 on actorid = actor.id
 
 where movie.title = 'Casablanca'
+----
+
+****
+
+select name
+from movie
+inner join casting
+on movie.id = movieid
+
+inner join actor
+on actor.id = actorid
+
+WHERE ord = 1 
+group by name
+having count(name) >= 15;
