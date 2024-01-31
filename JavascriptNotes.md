@@ -36,4 +36,8 @@ With template T if we wanted to put in either a number or str
   
 
 ----
+**Using Objects in a Kata**
+https://github.com/J-R-Kenny/startingletterskata
+
+----
 
