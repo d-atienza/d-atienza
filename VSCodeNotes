@@ -1,0 +1,23 @@
+re-organize imports
+- alt + shift + o
+
+grow selection
+- ctrl + shift + left/right arrow
+
+wrap (like a html wrapper)
+- alt + wrap
+
+html-element.classname
+- creates the html element tags with a class
+
+hide/show side panel for files/docs
+- ctrl + b
+
+wrap text
+- alt + a
+
+find documents
+- ctrl + p
+
+find commands
+- ctrl + shift + p
